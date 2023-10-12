@@ -1,5 +1,7 @@
 # import string library function
 import string
+#import regular expression function
+import re 
 #copying the sentence to variable a
 a='''	tHis iz your homeWork, copy these Text to variable. 
 
@@ -20,6 +22,8 @@ for i in a:
         c=c+1
 print('Total number of whitespace characters '+str(c))
 
+#regular expression findall function to search for last words in each existing sentence
+match=re.findall(r'\w+\.', a)
 # for loop to add the words from above list to the paragraph
 for m in match:
     a=a+' '+ m.replace('.','')
