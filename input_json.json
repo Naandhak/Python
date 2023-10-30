@@ -1,0 +1,21 @@
+{
+  "News":
+ [   {
+      "content": "Cyclone hit in America state",
+      "city": "Illnois"
+    }
+  ]  ,
+  "Ad": [
+{
+  "content": "Diwali shopping great sale flat 50% off",
+  "city": "Mumbai",
+  "exp_date": "2023-11-15"
+},
+{
+"content": "Amazon Great Indian Festival",
+"city": "None",
+"exp_date": "2023-11-15"
+}
+
+]
+}
