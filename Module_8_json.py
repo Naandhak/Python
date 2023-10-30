@@ -92,9 +92,9 @@ class Feed:
             print(self.inputfile+'.txt')
             os.remove(inputfile+'.txt')
         elif(self.format=='json'):
-            print('\n----Removing The ' + self.format + ' file---------------\n')
-            print(self.inputfile+'.'+self.format)
-            os.remove(path+inputfile+'.'+self.format)
+            print('\n----Removing The '+path+self.inputfile + ' file---------------\n')
+            print(self.inputfile)
+            os.remove(path+self.inputfile)
 
 class News(Feed):
     def __init__(self, inputfile):
@@ -169,6 +169,10 @@ class json_feed(Feed):
             d.Input_City()
             d.datetime()
             d.read_file()
+        #closing json file
+        f.close()
+        e=Feed(self.inputfile)
+        e.remove_File()
 
 #
 #New class to remove the input file and create new file with case normaliztation
@@ -255,10 +259,12 @@ if __name__=='__main__':
     a = (sys.argv[0].split("\\"))
     b = a[len(sys.argv[0].split("\\")) - 1]
     path = sys.argv[0].replace(b, '')
+
     if(inputfilename.split('.')[1]=='json'):
         print('Input file name:' + path + inputfilename)
         a=json_feed(inputfilename,path)
         a.read_json()
+
     else:
         print('Input file name:' + path+inputfilename)
         inputfile=path+inputfilename
